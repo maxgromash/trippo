@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:background="@color/bg">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/countyAvatarIV"
+        android:layout_width="165dp"
+        android:layout_height="165dp"
+        android:adjustViewBounds="true"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/roundedImageView" />
+
+    <TextView
+        android:id="@+id/nameTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:textColor="@color/text_primary"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/countyAvatarIV"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Roma" />
+
+    <TextView
+        android:id="@+id/countryTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_medium"
+        android:importantForAccessibility="no"
+        android:textColor="@color/text_secondary"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/nameTV"
+        app:layout_constraintTop_toBottomOf="@+id/nameTV"
+        tools:text="Italy" />
+
+    <ImageView
+        android:id="@+id/iconWeatherIV"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="3dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_baseline_cloud_queue_24"
+        app:layout_constraintStart_toStartOf="@+id/countryTV"
+        app:layout_constraintTop_toBottomOf="@+id/countryTV"
+        app:tint="@color/selector_selected" />
+
+    <ImageView
+        android:id="@+id/moneyIV"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="4dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_baseline_monetization_on_24"
+        app:layout_constraintBottom_toBottomOf="@+id/iconWeatherIV"
+        app:layout_constraintStart_toEndOf="@+id/iconWeatherIV"
+        app:layout_constraintTop_toTopOf="@+id/iconWeatherIV"
+        app:tint="@color/selector_selected" />
+
+    <ImageView
+        android:id="@+id/seaIV"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="4dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_baseline_beach_access_24"
+        app:layout_constraintBottom_toBottomOf="@+id/moneyIV"
+        app:layout_constraintStart_toEndOf="@+id/moneyIV"
+        app:layout_constraintTop_toTopOf="@+id/moneyIV"
+        app:tint="@color/selector_selected" />
+
+    <ImageView
+        android:id="@+id/iconPopularIV"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="4dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_baseline_emoji_people_24"
+        app:layout_constraintBottom_toBottomOf="@+id/seaIV"
+        app:layout_constraintStart_toEndOf="@+id/seaIV"
+        app:layout_constraintTop_toTopOf="@+id/seaIV"
+        app:tint="@color/selector_selected" />
+
+    <TextView
+        android:id="@+id/tempTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:importantForAccessibility="no"
+        android:textColor="@color/text_primary"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/exploreB"
+        app:layout_constraintStart_toStartOf="@+id/iconWeatherIV"
+        app:layout_constraintTop_toBottomOf="@+id/iconWeatherIV"
+        tools:text="25 C" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/exploreB"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/montserrat_medium"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/explore"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/countryTV" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

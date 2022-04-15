@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Trippo</string>
+    <string name="main">Main</string>
+    <string name="favourites">Starred</string>
+    <string name="explore">Explore</string>
+    <string name="summary">Summary</string>
+    <string name="select_month">Select month</string>
+    <string name="rating">Сoincidences</string>
+    <string name="hint_email">Email</string>
+    <string name="btn_sigh_in">Sign In</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="email">Email</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

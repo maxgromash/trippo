@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <ImageView
+        android:id="@+id/WelcomeImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="185dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toTopOf="@+id/WelcomeHeaderTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_rombs" />
+
+    <TextView
+        android:id="@+id/WelcomeHeaderTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="center"
+        android:text="Welcome to Trippo!"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toTopOf="@+id/subHeaderTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WelcomeImageView" />
+
+    <TextView
+        android:id="@+id/subHeaderTextView"
+        style="@style/TintTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter your username and password \nto login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/PasswordEditText"
+        style="@style/InputStyle"
+        android:layout_width="335dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="29dp"
+        android:background="@drawable/custom_input"
+        android:drawableLeft="@drawable/ic__lock"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColorHint="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UserNameEditText" />
+
+    <EditText
+        android:id="@+id/UserNameEditText"
+        style="@style/InputStyle"
+        android:layout_width="335dp"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic__nickname"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subHeaderTextView" />
+
+    <TextView
+        android:id="@+id/ForgotPassTextView"
+        style="@style/TintTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot password??"
+        app:layout_constraintBottom_toTopOf="@+id/loginButton"
+        app:layout_constraintEnd_toEndOf="@+id/PasswordEditText"
+        app:layout_constraintTop_toBottomOf="@+id/PasswordEditText" />
+
+    <Button
+        android:id="@+id/loginButton"
+        style="@style/TintTextStyle"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="45dp"
+        android:text="Login"
+        android:textColor="@color/white"
+        app:cornerRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PasswordEditText" />
+
+    <TextView
+        android:id="@+id/NoAccountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:clickable="true"
+        android:focusable="auto"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="Don't have an account? Register"
+        android:textAlignment="center"
+        android:textColor="@color/gray"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/white"
+        android:indeterminateTintMode="src_atop"
+        app:layout_constraintBottom_toTopOf="@+id/loginButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PasswordEditText" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

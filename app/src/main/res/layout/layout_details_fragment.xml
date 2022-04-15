@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?colorOnBackground">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?colorOnBackground"
+        tools:context=".ui.destinationFragment.DestinationFragment">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardWeatherCL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_card_weather"
+            app:layout_constraintEnd_toStartOf="@+id/cardDistanceCL"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/countryTAV">
+
+            <TextView
+                android:id="@+id/titleWeatherTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Weather"
+                android:textColor="@color/text_primary"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/weatherIconIV"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_baseline_cloud_queue_24"
+                app:layout_constraintBottom_toBottomOf="@+id/titleWeatherTV"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/titleWeatherTV"
+                app:layout_constraintTop_toTopOf="@+id/titleWeatherTV" />
+
+
+            <TextView
+                android:id="@+id/weatherTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="+25 C"
+                android:textColor="@color/text_primary"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleWeatherTV"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardDistanceCL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/bg_card_distance"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cardWeatherCL"
+            app:layout_constraintTop_toTopOf="@+id/cardWeatherCL">
+
+            <TextView
+                android:id="@+id/titleDistanceTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Distance"
+                android:textColor="@color/text_primary"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/weatherDistanceIV"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_baseline_map_24"
+                app:layout_constraintBottom_toBottomOf="@+id/titleDistanceTV"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/titleDistanceTV"
+                app:layout_constraintTop_toTopOf="@+id/titleDistanceTV" />
+
+
+            <TextView
+                android:id="@+id/DistanceTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="1537 km"
+                android:textColor="@color/text_primary"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleDistanceTV"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardTimeCL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_card_time"
+            app:layout_constraintEnd_toStartOf="@+id/cardLangCL"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardWeatherCL">
+
+            <TextView
+                android:id="@+id/titleTimeTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Time diff"
+                android:textColor="@color/text_primary"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/TimeIconIV"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_baseline_access_time_24"
+                app:layout_constraintBottom_toBottomOf="@+id/titleTimeTV"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/titleTimeTV"
+                app:layout_constraintTop_toTopOf="@+id/titleTimeTV" />
+
+
+            <TextView
+                android:id="@+id/TimeTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="-3 hour"
+                android:textColor="@color/text_primary"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleTimeTV"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardLangCL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/bg_card_lang"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cardTimeCL"
+            app:layout_constraintTop_toTopOf="@+id/cardTimeCL">
+
+            <TextView
+                android:id="@+id/titleLangTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="English"
+                android:textColor="@color/text_primary"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/LangIconIV"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_baseline_language_24"
+                app:layout_constraintBottom_toBottomOf="@+id/titleLangTV"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/titleLangTV"
+                app:layout_constraintTop_toTopOf="@+id/titleLangTV" />
+
+
+            <TextView
+                android:id="@+id/LangTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="59%"
+                android:textColor="@color/text_primary"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleLangTV"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardCoronaCL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/bg_card_corona"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardTimeCL">
+
+            <TextView
+                android:id="@+id/titleCoronaTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Coronavirus"
+                android:textColor="@color/text_primary"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/TimeCoronaIV"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_baseline_coronavirus_24"
+                app:layout_constraintBottom_toBottomOf="@+id/titleCoronaTV"
+                app:layout_constraintStart_toEndOf="@+id/titleCoronaTV"
+                app:layout_constraintTop_toTopOf="@+id/titleCoronaTV" />
+
+
+            <TextView
+                android:id="@+id/CoronaTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Open for tourists"
+                android:textColor="@color/text_primary"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleCoronaTV"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardHotelCL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/bg_card_hotels"
+            android:paddingBottom="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardCoronaCL">
+
+            <TextView
+                android:id="@+id/titleHotelTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Hotels prices per hight"
+                android:textColor="@color/text_primary"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/TimeHotelIV"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_baseline_hotel_24"
+                app:layout_constraintBottom_toBottomOf="@+id/titleHotelTV"
+                app:layout_constraintStart_toEndOf="@+id/titleHotelTV"
+                app:layout_constraintTop_toTopOf="@+id/titleHotelTV" />
+
+            <ImageView
+                android:id="@+id/star3TV"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:src="@mipmap/star3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleHotelTV"
+                app:tint="@color/quantum_yellow" />
+
+            <TextView
+                android:id="@+id/textHotel3TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="9$"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="@+id/star3TV"
+                app:layout_constraintStart_toEndOf="@+id/star3TV"
+                app:layout_constraintTop_toTopOf="@+id/star3TV" />
+
+            <ImageView
+                android:id="@+id/star4TV"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:src="@mipmap/star4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/star3TV"
+                app:tint="@color/quantum_yellow" />
+
+            <TextView
+                android:id="@+id/textHotel4TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="29$"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="@+id/star4TV"
+                app:layout_constraintStart_toEndOf="@+id/star4TV"
+                app:layout_constraintTop_toTopOf="@+id/star4TV" />
+
+            <ImageView
+                android:id="@+id/star5TV"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:src="@mipmap/star5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/star4TV"
+                app:tint="@color/quantum_yellow" />
+
+            <TextView
+                android:id="@+id/textHotel5TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="45$"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="@+id/star5TV"
+                app:layout_constraintStart_toEndOf="@+id/star5TV"
+                app:layout_constraintTop_toTopOf="@+id/star5TV" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/bannerIv"
+            android:layout_width="0dp"
+            android:layout_height="350dp"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/backIV"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:padding="4dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic__go_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/starredIV"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_baseline_star_border_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/cityTAV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/text_primary"
+            android:textSize="26sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bannerIv"
+            tools:text="Rattlesnake" />
+
+        <TextView
+            android:id="@+id/countryTAV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="@color/text_secondary"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/cityTAV"
+            app:layout_constraintTop_toBottomOf="@+id/cityTAV"
+            tools:text="USA" />
+
+
+        <ImageView
+            android:id="@+id/iconWeatherIV"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginEnd="4dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_baseline_cloud_queue_24"
+            app:layout_constraintBottom_toBottomOf="@+id/moneyIV"
+            app:layout_constraintEnd_toStartOf="@+id/moneyIV"
+            app:layout_constraintTop_toTopOf="@+id/moneyIV"
+            app:tint="@color/selector_selected" />
+
+        <ImageView
+            android:id="@+id/moneyIV"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginEnd="4dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_baseline_monetization_on_24"
+            app:layout_constraintBottom_toBottomOf="@+id/seaIV"
+            app:layout_constraintEnd_toStartOf="@+id/seaIV"
+            app:layout_constraintTop_toTopOf="@+id/seaIV"
+            app:tint="@color/selector_selected" />
+
+        <ImageView
+            android:id="@+id/seaIV"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginEnd="4dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_baseline_beach_access_24"
+            app:layout_constraintBottom_toBottomOf="@+id/iconPopularIV"
+            app:layout_constraintEnd_toStartOf="@+id/iconPopularIV"
+            app:layout_constraintTop_toTopOf="@+id/iconPopularIV"
+            app:tint="@color/selector_selected" />
+
+        <ImageView
+            android:id="@+id/iconPopularIV"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="24dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_baseline_emoji_people_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bannerIv"
+            app:tint="@color/selector_selected" />
+
+        <TextView
+            android:id="@+id/ratingSubtitleTAV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/rating"
+            android:textColor="@color/text_secondary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/separatorV"
+            app:layout_constraintTop_toBottomOf="@+id/separatorV" />
+
+        <View
+            android:id="@+id/separatorV"
+            android:layout_width="116dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/iconPopularIV"
+            app:layout_constraintTop_toBottomOf="@+id/iconPopularIV" />
+
+        <TextView
+            android:id="@+id/bookMarkTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_book_mark"
+            android:fontFamily="@font/montserrat_medium"
+            android:importantForAccessibility="no"
+            android:paddingVertical="8dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="16dp"
+            android:text="@string/summary"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bestLocationRV" />
+
+        <TextView
+            android:id="@+id/bookMarkTV2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_book_mark"
+            android:fontFamily="@font/montserrat_medium"
+            android:importantForAccessibility="no"
+            android:paddingVertical="8dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="16dp"
+            android:text="Top to do"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardHotelCL" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/bestLocationRV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bookMarkTV2" />
+
+        <TextView
+            android:id="@+id/descriptionTAV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/montserrat_light"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bookMarkTV"
+            tools:text="Description info" />
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapMV"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionTAV" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

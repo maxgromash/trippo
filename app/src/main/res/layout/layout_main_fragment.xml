@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    tools:context=".ui.main.MainFragment">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchSV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/selector_bg_search"
+        android:queryBackground="@android:color/transparent"
+        android:textColor="@color/black"
+        app:closeIcon="@drawable/ic_baseline_clear_24"
+        app:goIcon="@drawable/ic_baseline_search_24"
+        app:layout_constraintEnd_toStartOf="@+id/monthSelectorMB"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryBackground="@null"
+        app:searchHintIcon="@drawable/ic_baseline_search_24"
+        app:searchIcon="@drawable/ic_baseline_search_24" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/monthSelectorMB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/montserrat_medium"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/select_month"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:cornerRadius="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/searchSV" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sortMB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/bg"
+        android:fontFamily="@font/montserrat_medium"
+        tools:text="Most popular ▼"
+        android:textAllCaps="false"
+        android:textColor="@color/text_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchSV" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loadingLAV"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="30dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sortMB"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/not_found"
+        app:lottie_speed="1.5"
+        tools:visibility="visible" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchResultsRV"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="48dp"
+        android:fadingEdgeLength="30dp"
+        android:requiresFadingEdge="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchSV"
+        tools:itemCount="3"
+        tools:listitem="@layout/item_search_result" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

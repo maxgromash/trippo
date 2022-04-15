@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_main">
+
+    <fragment
+        android:id="@+id/navigation_favourites"
+        android:name="edu.project.trippo.ui.favouritesFragment.FavoritesFragment"
+        android:label="layout_favorites_fragment"
+        tools:layout="@layout/layout_favorites_fragment">
+        <action
+            android:id="@+id/action_navigation_favourites_to_destinationFragment"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_main"
+        android:name="edu.project.trippo.ui.main.MainFragment"
+        android:label="layout_main_fragment"
+        tools:layout="@layout/layout_main_fragment">
+        <action
+            android:id="@+id/action_navigation_main_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_navigation_main_to_quizFragment"
+            app:destination="@id/quizFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="edu.project.trippo.ui.destinationFragment.DestinationFragment"
+        android:label="fragment_destination"
+        tools:layout="@layout/layout_details_fragment">
+        <argument
+            android:name="id"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="edu.project.trippo.ui.quizFragment.QuizFragment"
+        android:label="layout_quiz_fragment"
+        tools:layout="@layout/layout_quiz_fragment">
+        <argument
+            android:name="quiz"
+            app:argType="edu.project.trippo.model.Quiz" />
+    </fragment>
+</navigation>
